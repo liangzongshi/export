@@ -4,7 +4,7 @@ const ObjectsToCsv = require('objects-to-csv')
 
 const writeLog = async () => {
     const orders = (await db.system({}, 'orders'))[0].orders
-    const logs = orders.slice(105, 5105)
+    const logs = orders.slice(25105, 30105)
     var re_logs = []
     for ( var i = 0; i < logs.length; i++){
         console.log(i)
@@ -21,7 +21,7 @@ const writeLog = async () => {
     }
 
     const csv = new ObjectsToCsv(re_logs)
-    await csv.toDisk(`./finfine.csv`, { bom: true })
+    await csv.toDisk(`./finfine5.csv`, { bom: true })
     console.log('Write Log HFT')
 }
 
